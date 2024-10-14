@@ -1,0 +1,65 @@
+/* 푸터 스타일 */
+#footerMain {
+    width: 100%; /* 화면에 맞게 너비 설정 */
+    height: 400px; /* 고정 높이 설정 */
+    background-color: #f8f8f8; /* 배경색 설정 */
+    display: flex; /* 가로 정렬을 위한 flexbox */
+    justify-content: space-around; /* 메뉴 컬럼 간의 간격 설정 */
+    padding: 20px 0; /* 상하 여백 설정 */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* 아래 그림자 효과 */
+}
+
+/* 메뉴 컬럼 스타일 */
+#footerMenu {
+    display: flex; /* 가로 정렬을 위한 flexbox */
+    flex-direction: row; /* 기본 방향은 가로 */
+    width: 100%; /* 메뉴 영역 전체 너비 설정 */
+}
+
+/* 각 메뉴 컬럼 스타일 */
+#menuColumn1,
+#menuColumn2,
+#menuColumn3,
+#menuColumn4 {
+	padding-left: 20px;
+    margin-top: 140px;
+    flex: 1; /* 각 컬럼의 너비를 동일하게 설정 */
+    display: flex; /* 하위 요소를 세로 정렬을 위한 flexbox */
+    flex-direction: column; /* 세로 방향으로 정렬 */
+    align-items: flex-start; /* 왼쪽 정렬 */
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.columnSection {
+    margin-bottom: 20px; /* 각 항목 사이 간격 설정 */
+}
+
+.columnSection a {
+    text-decoration: none; /* 밑줄 제거 */
+    color: #333; /* 링크 색상 설정 */
+    display: block; /* 블록 요소로 설정하여 너비를 늘림 */
+    width: 100%; /* 링크가 컬럼 너비를 채우도록 설정 */
+}
+
+/* 메뉴 링크 스타일 */
+#footerMenu a {
+    text-decoration: none; /* 밑줄 제거 */
+    color: #333; /* 글자 색상 설정 */
+    margin: 10px 0; /* 각 항목 사이 간격 설정 */
+    font-size: 14px; /* 글자 크기 설정 */
+}
+
+/* 푸터 정보 스타일 */
+#footerInfo {
+    height: 230px;
+    text-align: center; /* 가운데 정렬 */
+    font-size: 12px; /* 글자 크기 설정 */
+    color: #666; /* 글자 색상 설정 */
+}
+
+/* 저작권 스타일 */
+#copyRight {
+    margin-top: 10px; /* 정보와 저작권 사이 여백 설정 */
+    font-size: 14px; /* 글자 크기 설정 */
+}

@@ -1,0 +1,71 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<% String contextPath=request.getContextPath(); %>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/common/main.css">
+</head>
+
+<body>
+    <header>
+        <%@ include file="../common/header.jsp" %>
+    </header>
+    <div id="mainContainer">
+        <!-- 유튜브 동영상 배너 -->
+        <div id="videoContainer">
+            <div id="player"></div>
+        </div>
+    </div>
+    <footer>
+        <%@ include file="../common/footer.jsp" %>
+    </footer>
+
+    <script>
+        // IFrame API를 비동기로 로드
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        // YouTube API 로드 후 호출되는 콜백 함수
+        function onYouTubeIframeAPIReady() {
+            new YT.Player('player', {
+                height: '100%', // 부모 요소의 높이 사용
+                width: '100%', // 부모 요소의 너비 사용
+                videoId: 'T2CwGpJGWxg', // YouTube 비디오 ID
+                playerVars: {
+                    'autoplay': 1, // 자동 재생
+                    'mute': 1, // 음소거
+                    'controls': 0, // 플레이어 컨트롤 숨기기
+                    'loop': 1, // 반복 재생
+                    'playlist': 'T2CwGpJGWxg', // 같은 동영상 ID를 playlist에 추가
+                    'showinfo': 0, // 비디오 제목 및 uploader 정보 숨기기
+                    'modestbranding': 1, // YouTube 로고 최소화
+                    'rel': 0, // 관련 비디오 숨기기
+                    'iv_load_policy': 3 // 주석(인포그래픽) 숨기기
+                },
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        // 플레이어가 준비되었을 때 호출되는 함수
+        function onPlayerReady(event) {
+            event.target.playVideo(); // 비디오 자동 재생
+        }
+
+        // 플레이어 상태 변경 시 호출되는 함수
+        function onPlayerStateChange(event) {
+            if (event.data === YT.PlayerState.ENDED) {
+                event.target.playVideo(); // 비디오가 끝났을 때 다시 재생
+            }
+        }
+    </script>
+</body>
+
+</html>

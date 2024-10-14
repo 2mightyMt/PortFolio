@@ -1,0 +1,67 @@
+/* 공통 스타일 */
+#headerSticky {
+    position: sticky;
+    top: 0;
+    width: 100%; /* 화면에 맞게 width 100%로 설정 */
+    max-width: 1920px; /* 최대 너비 설정 */
+    height: 55px; /* 고정 높이 설정 */
+    background-color: white; /* 배경색 설정 */
+    display: flex; /* 가로 정렬을 위한 flexbox */
+    justify-content: space-between; /* 양 끝에 요소 배치 */
+    align-items: center; /* 세로 중앙 정렬 */
+    z-index: 1000; /* 다른 요소 위에 위치 */
+}
+
+/* 로고 섹션 */
+#headerLeft {
+    flex: 1; /* 왼쪽 여유 공간 */
+}
+
+#logo img {
+    height: 20px; /* 이미지 높이 고정 */
+}
+
+/* 중앙 메뉴 섹션 */
+#headerCenter {
+    flex: 2; /* 가운데 넉넉한 공간 */
+    display: flex;
+    justify-content: center; /* 메뉴를 중앙에 배치 */
+}
+
+#centerMenu a {
+    margin: 0 15px; /* 각 메뉴 항목 사이 간격 */
+    text-decoration: none; /* 밑줄 제거 */
+    color: black; /* 글자 색상 */
+    font-size: 16px; /* 글자 크기 */
+    line-height: 55px; /* 글자가 높이에 맞게 중앙 정렬되도록 */
+}
+
+/* 오른쪽 메뉴 섹션 */
+#headerRight {
+    flex: 1; /* 오른쪽 여유 공간 */
+    display: flex;
+    justify-content: flex-end; /* 오른쪽 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+}
+
+#rightMenu div {
+    margin-left: 15px;
+    display: inline-block;
+}
+
+#rightMenu img {
+    height: 25px; /* 이미지 크기 설정 */
+    vertical-align: middle; /* 이미지와 텍스트 중앙 정렬 */
+}
+
+/* 반응형 처리 */
+@media screen and (max-width: 768px) {
+    #centerMenu a {
+        font-size: 14px; /* 작은 화면에서 글자 크기 축소 */
+        margin: 0 10px;
+    }
+
+    #rightMenu img {
+        height: 20px; /* 아이콘 크기 축소 */
+    }
+}
