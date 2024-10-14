@@ -1,0 +1,86 @@
+/* 공통 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#headerSticky {
+    position: relative; /* 헤더를 기준으로 드롭다운 위치를 설정 */
+    top: 0;
+    width: 100%; /* 헤더의 가로 길이 */
+    height: 55px; /* 고정 높이 설정 */
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* 중앙 메뉴 섹션 */
+#headerCenter {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.nav {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav li {
+    position: relative;
+    padding: 15px 20px;
+}
+
+.nav li a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.nav li .dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%; /* 헤더의 가로 길이에 맞춤 */
+    height: 500px;
+    background-color: #f4f4f4;
+    display: none;
+    z-index: 10;
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.nav li:hover .dropdown-content {
+    display: flex;
+    justify-content: space-around;
+}
+
+.sub-menu {
+    background-color: #fff;
+    width: 100%; /* 드롭다운 메뉴의 가로 길이를 헤더와 동일하게 */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+}
+
+/* 반응형 처리 */
+@media screen and (max-width: 768px) {
+    #centerMenu a {
+        font-size: 14px;
+        margin: 0 10px;
+    }
+
+    #rightMenu img {
+        height: 20px;
+    }
+}

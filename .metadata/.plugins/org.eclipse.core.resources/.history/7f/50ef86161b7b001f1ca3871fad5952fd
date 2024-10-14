@@ -1,0 +1,119 @@
+/* 공통 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#headerSticky {
+    position: fixed; /* 헤더를 고정 */
+    top: 0;
+    width: 100vw; /* 헤더의 가로 길이 */
+    height: 55px; /* 고정 높이 설정 */
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* 로고 섹션 */
+#headerLeft {
+    flex: 1;
+}
+
+#logo img {
+    height: 20px;
+}
+
+/* 중앙 메뉴 섹션 */
+#headerCenter {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+}
+
+#centerMenu {
+    position: relative;
+}
+
+.nav {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.nav li {
+    position: relative;
+    padding: 15px 20px;
+}
+
+.nav li a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* 드롭다운 메뉴 */
+.nav li .dropdown-content {
+    position: fixed; /* 페이지 전체 기준 */
+    top: 55px; /* 헤더 바로 아래로 위치 */
+    left: 0; /* 화면 왼쪽에서 시작 */
+    width: 100vw; /* 화면 전체 너비 */
+    height: 500px; /* 고정된 높이 */
+    background-color: #f4f4f4;
+    display: none;
+    z-index: 1000; /* 헤더보다 높은 레이어에 위치 */
+    padding: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.nav li:hover .dropdown-content {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* 서브 메뉴 */
+.sub-menu {
+    background-color: #fff;
+    width: 100%; /* 가로 값을 드롭다운 전체에 맞춤 */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+}
+
+/* 오른쪽 메뉴 섹션 */
+#headerRight {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#rightMenu div {
+    margin-left: 15px;
+    display: inline-block;
+}
+
+#rightMenu img {
+    height: 25px;
+    vertical-align: middle;
+}
+
+/* 반응형 처리 */
+@media screen and (max-width: 768px) {
+    #centerMenu a {
+        font-size: 14px;
+        margin: 0 10px;
+    }
+
+    #rightMenu img {
+        height: 20px;
+    }
+}

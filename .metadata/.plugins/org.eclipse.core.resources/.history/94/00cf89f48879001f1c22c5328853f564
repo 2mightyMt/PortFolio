@@ -1,0 +1,43 @@
+/* header.css */
+
+#headerSticky {
+    width: 1920px; /* 고정 너비 */
+    max-width: 100%; /* 반응형 */
+    height: 55px; /* 높이 설정 */
+    position: sticky; /* 스티키 속성 */
+    top: 0; /* 스크롤 시 상단에 고정 */
+    background-color: #fff; /* 배경색 (필요에 따라 변경) */
+    display: flex; /* 가로 정렬을 위해 flex 사용 */
+    align-items: center; /* 세로 가운데 정렬 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 효과 (선택 사항) */
+}
+
+#headerLeft,
+#headerCenter,
+#headerRight {
+    height: 55px; /* 하위 요소 높이 설정 */
+    display: flex; /* 가로 정렬을 위해 flex 사용 */
+    align-items: center; /* 세로 가운데 정렬 */
+}
+
+#logo img {
+    height: 22px; /* 로고 이미지 높이 설정 */
+}
+
+#centerMenu {
+    display: flex; /* 가로 정렬을 위해 flex 사용 */
+}
+
+#centerMenu a {
+    margin: 0 15px; /* 메뉴 항목 간의 간격 */
+    text-decoration: none; /* 링크의 기본 밑줄 제거 */
+    color: #000; /* 글자 색상 (필요에 따라 변경) */
+}
+
+#rightMenu div {
+    margin-left: 15px; /* 아이콘 간의 간격 */
+}
+
+#rightMenu img {
+    height: 22px; /* 아이콘 이미지 높이 설정 */
+}
